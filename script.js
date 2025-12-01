@@ -32,7 +32,7 @@ navigationItems.forEach((item) => {
     content.className = "flex flex-col h-full justify-center items-center text-white";
     // Add title
     const titleHeading = document.createElement("h4");
-    titleHeading.className = "font-bold";
+    titleHeading.className = "font-bold text-center";
     titleHeading.textContent = item.title;
     // Assemble card
     content.appendChild(titleHeading);
