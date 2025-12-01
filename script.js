@@ -1,13 +1,13 @@
 const navigationItems = [
     {
         title: `Santa's Tiling Trouble`,
-        link: `/day_1/`,
-        img: "/img/day_1.png",
+        link: "./day_1/",
+        img: "./img/day_1.png",
     },
     {
-        title: `TBA`,
-        link: `/day_2/`,
-        img: "/img/day_2.png",
+        title: "TBA",
+        link: "./day_2/",
+        img: "./img/day_2.png",
     },
 ];
 const cardContainer = document.getElementById("card-container");

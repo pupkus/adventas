@@ -53,6 +53,7 @@ function resizeRectangle(boxWidth, boxLength, width, length) {
     rectangle.style.setProperty("--after-content", `"${width} m"`);
     const area = width * length;
     rectangle.textContent = `${area} m²`;
+    // a nice animation effect
     rectangle.classList.add("resizing");
     setTimeout(() => rectangle.classList.remove("resizing"), 300);
 }
@@ -61,7 +62,7 @@ function drawRectangle(length, width) {
     let widthNum = Number(width) * defaultScale;
     if (Number.isNaN(lengthNum) || Number.isNaN(widthNum))
         return;
-    // scale down to fit container if needed
+    // scale down to fit container if exceeds cap
     if (lengthNum > containerCap || widthNum > containerCap) {
         const lengthScale = lengthNum / containerCap;
         const widthScale = widthNum / containerCap;
