@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    // ========= OUTPUT SETTINGS =========
+    "target": "ES6", // Modern JS output
+    "module": "none", // Produce plain JS, no import/export needed
+    "outDir": "./", // Output JS next to TS (root-level project)
+    "rootDir": "./", // TS files can be anywhere
+
+    // ========= TYPE CHECKING =========
+    "strict": true, // Best practice, but can be false if too annoying
+    "noImplicitAny": false, // Allow flexibility for quick coding challenges
+    "skipLibCheck": true, // Faster compilations
+
+    // ========= FILE HANDLING =========
+    "allowJs": true, // Lets TS compile and check .js too
+    "checkJs": false, // Don’t spam errors in JS files unless you want it
+    "resolveJsonModule": false, // Not needed for vanilla use
+    "esModuleInterop": false, // Only needed for Node
+
+    // ========= CODE OUTPUT FORMAT =========
+    "removeComments": false, // Keep comments, optional
+    "preserveConstEnums": true, // Avoid TS enum weirdness
+    "isolatedModules": false // Not needed unless bundling
+  },
+
+  "include": ["./**/*.ts"],
+  "exclude": ["node_modules"]
+}

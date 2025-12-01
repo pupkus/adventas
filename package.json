@@ -1,0 +1,24 @@
+{
+  "name": "adventas",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000a\u0000d\u0000v\u0000e\u0000n\u0000t\u0000a\u0000s\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pupkus/adventas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/pupkus/adventas/issues"
+  },
+  "homepage": "https://github.com/pupkus/adventas#readme",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
