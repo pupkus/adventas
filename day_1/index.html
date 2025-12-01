@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      :root {
+        --before-content: "";
+        --after-content: "";
+      }
+
+      .rectangle {
+        position: relative;
+        border: 2px solid rgba(255, 255, 255, 0.8);
+        border-radius: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(circle at top left, #22c55e33, #0f172a);
+        font-weight: 600;
+      }
+
+      .rectangle::before,
+      .rectangle::after {
+        position: absolute;
+        font-size: 0.75rem;
+        color: rgba(248, 250, 252, 0.8);
+      }
+
+      /* left side label (length) */
+      .rectangle::before {
+        content: var(--before-content, "");
+        top: 50%;
+        left: -2.25rem;
+        transform: translateY(-50%);
+      }
+
+      /* bottom label (width) */
+      .rectangle::after {
+        content: var(--after-content, "");
+        left: 50%;
+        bottom: -1.85rem;
+        transform: translateX(-50%);
+      }
+
+      .rectangle {
+        transition: width 0.3s ease, height 0.3s ease, background 0.5s ease;
+      }
+
+      .rectangle.resizing {
+        box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+        transform: scale(1.02);
+      }
+    </style>
+  </head>
+
+  <body class="min-h-screen bg-slate-950 text-slate-50 flex flex-col items-center">
+    <header class="w-full max-w-5xl px-4 pt-10">
+      <h1 id="page-title" class="text-3xl font-bold tracking-tight mb-2"></h1>
+    </header>
+
+    <main class="w-full max-w-5xl px-4 pb-10 pt-6">
+      <div id="assignment" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <!-- Rectangle / preview card -->
+        <section class="flex flex-col gap-4 bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl">
+          <h2 class="text-lg font-semibold mb-1">Room preview</h2>
+
+          <div
+            id="square-container"
+            class="flex items-center justify-center rounded-xl bg-slate-900 border border-slate-800 h-80"
+          >
+            <div class="rectangle text-slate-50 text-sm shadow-inner"></div>
+          </div>
+
+          <div id="results" class="mt-4 text-sm text-slate-200 space-y-1"></div>
+        </section>
+
+        <!-- Form card -->
+        <section class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl">
+          <h2 class="text-lg font-semibold mb-4">Inputs</h2>
+
+          <form id="form" class="space-y-4">
+            <div>
+              <label for="price" class="block text-sm font-medium text-slate-200"> Coins per m² </label>
+              <input
+                type="number"
+                id="price"
+                name="price"
+                class="mt-1 p-2 rounded bg-gray-800 text-white w-40 border border-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                min="0.01"
+                step="0.01"
+                data-price
+              />
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-1">
+                <label for="length" class="block text-sm font-medium text-slate-200"> Length (m) </label>
+                <input
+                  type="number"
+                  id="length"
+                  name="length"
+                  class="mt-1 p-2 rounded bg-gray-800 text-white w-full border border-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  min="1"
+                  data-dimensions
+                />
+              </div>
+
+              <div class="flex-1">
+                <label for="width" class="block text-sm font-medium text-slate-200"> Width (m) </label>
+                <input
+                  type="number"
+                  id="width"
+                  name="width"
+                  class="mt-1 p-2 rounded bg-gray-800 text-white w-full border border-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  min="1"
+                  data-dimensions
+                />
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              class="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-emerald-600 rounded-lg hover:bg-emerald-500 text-sm font-medium transition shadow-md hover:shadow-lg"
+            >
+              <span>Calculate</span>
+            </button>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

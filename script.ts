@@ -7,18 +7,17 @@ type NavigationItem = {
 const navigationItems: NavigationItem[] = [
   {
     title: `Santa's Tiling Trouble`,
-    link: `/day_1/index.html`,
+    link: `/day_1/`,
     img: "/img/day_1.png",
   },
   {
     title: `TBA`,
-    link: `/day_2/index.html`,
-    img: "/img/day_1.png",
+    link: `/day_2/`,
+    img: "/img/day_2.png",
   },
 ];
 
 const cardContainer = document.getElementById("card-container");
-
 navigationItems.forEach((item) => {
   // Create card container
   const card = document.createElement("div");
@@ -55,3 +54,15 @@ navigationItems.forEach((item) => {
   card.appendChild(overlay);
   cardContainer?.appendChild(card);
 });
+
+export function initiateMetadata() {
+  const currentPath = window.location.pathname;
+  const currentItem = navigationItems.find((item) => item.link === currentPath);
+
+  if (currentItem) {
+    document.title = currentItem.title;
+
+    const h1 = document.getElementById("page-title");
+    if (h1) h1.textContent = currentItem.title;
+  }
+}

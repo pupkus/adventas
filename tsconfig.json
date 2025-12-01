@@ -2,7 +2,7 @@
   "compilerOptions": {
     // ========= OUTPUT SETTINGS =========
     "target": "ES6", // Modern JS output
-    "module": "none", // Produce plain JS, no import/export needed
+    "module": "ESNext",
     "outDir": "./", // Output JS next to TS (root-level project)
     "rootDir": "./", // TS files can be anywhere
 
