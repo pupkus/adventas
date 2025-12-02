@@ -15,10 +15,53 @@
     gap: 2rem;
 
     transform: perspective(1000px) rotateX(5deg);
-    animation: arcTilt 0.25s ease-out forwards;
+    animation: arcTilt 1s ease-out forwards;
   }
 
   body {
     overflow-x: hidden;
   }
+}
+
+@keyframes bgZoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes vignettePulse {
+  0% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.85;
+  }
+}
+
+.background {
+  animation: bgZoom 12s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0) 40%,
+    rgba(0, 0, 0, 0.35) 80%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  animation: vignettePulse 16s ease-in-out infinite;
 }
