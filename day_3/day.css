@@ -1,0 +1,32 @@
+.digit {
+  min-width: 75px;
+}
+
+.overlap {
+  position: relative;
+  top: -142px; /* starting overlapped position */
+  transition: top 0.6s ease-out;
+}
+
+.overlap.drop-in {
+  top: 20px; /* drop into place */
+}
+
+.digit-box {
+  transition: width 1s ease, padding 1s ease, margin 1s ease, opacity 0.5s ease, border-width 1s ease,
+    box-shadow 0.5s ease;
+}
+
+/* middle digits collapsing away */
+.digit-collapse {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 0 !important;
+  opacity: 0;
+  border-width: 0;
+  overflow: hidden;
+}
+
+.shadow {
+  box-shadow: 0 0 10px 10px rgba(16, 185, 129, 0.5) !important;
+}

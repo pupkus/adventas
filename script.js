@@ -1,7 +1,7 @@
 const titleArray = [
     `Santa's Tiling Trouble`,
     "Santa’s Midnight Clock Countdown",
-    "TBA",
+    "Santa’s Number-Trimming Magic",
     "TBA",
     "TBA",
     "TBA",
@@ -41,8 +41,7 @@ navigationItems.forEach((item) => {
     link.href = item.link;
     link.className = "relative z-10 flex h-full w-full";
     const content = document.createElement("div");
-    content.className =
-        "flex flex-col h-full w-full justify-center items-center text-white";
+    content.className = "flex flex-col h-full w-full justify-center items-center text-white";
     const titleHeading = document.createElement("h4");
     titleHeading.className =
         "block w-full font-bold text-center bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-md md:text-3xl sm:text-6xl lg:text-sm";

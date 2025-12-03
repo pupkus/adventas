@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" />
+    <link rel="stylesheet" href="./day.css" />
+  </head>
+
+  <body class="min-h-screen bg-slate-950 text-slate-50 flex flex-col items-center">
+    <header class="w-full max-w-5xl px-4 pt-10">
+      <h1 id="page-title" class="text-3xl font-bold"></h1>
+    </header>
+
+    <main class="w-full max-w-5xl px-4 pb-10 pt-6">
+      <div id="assignment" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <!-- Trim preview -->
+        <section class="flex flex-col gap-4 bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl pb-10">
+          <h2 class="text-lg font-semibold mb-1">Clock preview</h2>
+
+          <div class="digit flex flex-row w-full justify-center">
+            <div
+              id="digit_1"
+              class="m-2 bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl aspect-square text-6xl flex items-center justify-center"
+            >
+              1
+            </div>
+            <div
+              id="digit_2"
+              class="m-2 digit bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl aspect-square text-6xl flex items-center justify-center"
+            >
+              3
+            </div>
+            <div
+              id="digit_3"
+              class="m-2 digit bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl aspect-square text-6xl flex items-center justify-center"
+            >
+              3
+            </div>
+            <div
+              id="digit_4"
+              class="m-2 digit bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl aspect-square text-6xl flex items-center justify-center"
+            >
+              7
+            </div>
+          </div>
+
+          <div class="flex flex-row overlap w-full justify-center digits">
+            <div
+              id="trimmed_1"
+              class="m-2 digit digit-box bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl aspect-square text-6xl flex items-center justify-center"
+            >
+              1
+            </div>
+
+            <div
+              id="trimmed_2"
+              class="m-2 digit digit-box digit-mid bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl aspect-square text-6xl flex items-center justify-center"
+            >
+              3
+            </div>
+
+            <div
+              id="trimmed_3"
+              class="m-2 digit digit-box digit-mid bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl aspect-square text-6xl flex items-center justify-center"
+            >
+              3
+            </div>
+
+            <div
+              id="trimmed_4"
+              class="m-2 digit digit-box bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl aspect-square text-6xl flex items-center justify-center"
+            >
+              7
+            </div>
+          </div>
+        </section>
+
+        <!-- Form card -->
+        <section class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl">
+          <h2 class="text-lg font-semibold mb-4">Inputs</h2>
+
+          <form id="form" class="space-y-4">
+            <div class="flex gap-4">
+              <div class="flex-1">
+                <label for="digits" class="block text-sm font-medium text-slate-200"> Digits </label>
+                <input
+                  type="string"
+                  id="digits"
+                  name="digits"
+                  class="mt-1 p-2 rounded bg-gray-800 text-white w-full border border-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  value="1337"
+                  data-dimensions
+                />
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              class="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-emerald-600 rounded-lg hover:bg-emerald-500 text-sm font-medium transition shadow-md hover:shadow-lg"
+            >
+              <span>Trim</span>
+            </button>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

@@ -5,6 +5,7 @@ const defaultInput = 5; // meters
 const defaultScale = 40; // px per meter (before scaling to fit)
 const defaultPrice = 1; // coins per m²
 const extra = 0.05; // +5% extra area
+const lastState = { length: defaultInput, width: defaultInput }; // to prevent unnecessary animation
 
 const priceInput = document.querySelector("[data-price]") as HTMLInputElement;
 const form = document.getElementById("form") as HTMLFormElement;
@@ -72,8 +73,12 @@ function resizeRectangle(boxWidth: number, boxLength: number, width: number, len
   rectangle.textContent = `${area} m²`;
 
   // a nice animation effect
-  rectangle.classList.add("resizing");
-  setTimeout(() => rectangle.classList.remove("resizing"), 300);
+  if (!(lastState.length === length && lastState.width === width)) {
+    rectangle.classList.add("resizing");
+    setTimeout(() => rectangle.classList.remove("resizing"), 300);
+    lastState.length = length;
+    lastState.width = width;
+  }
 }
 
 function drawRectangle(length: string, width: string) {
