@@ -89,4 +89,6 @@ window.onload = () => {
         existing.addEventListener("animationend", () => {
             // after old text slides out replace with new one sliding in from left
             countdownText.innerHTML = `<span class="countdown-phrase slide-in">${newText}</span>`;
- 
+        }, { once: true });
+    }
+};
