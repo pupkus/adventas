@@ -1,4 +1,6 @@
-# Adventas 🎄
+# 🎄🎄 Kalėdinis TECHIN programavimo iššūkis 2025 🎄🎄
+
+## my way
 
 Small coding challenge project.
 
@@ -8,6 +10,7 @@ Small coding challenge project.
 - Fully static — no backend
 
 ### 🔗 Live Preview
+
 https://pupkus.github.io/adventas
 
 ---

@@ -5,19 +5,29 @@
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css"
+    />
     <link rel="stylesheet" href="./day.css" />
   </head>
 
-  <body class="min-h-screen bg-slate-950 text-slate-50 flex flex-col items-center">
-    <header class="w-full max-w-5xl px-4 pt-10">
-      <h1 id="page-title" class="text-3xl font-bold"></h1>
-    </header>
+  <body
+    class="min-h-screen bg-slate-950 text-slate-50 flex flex-col items-center"
+  >
+    <nav
+      class="w-full py-6 p-6 bg-slate-900 flex justify-between items-center"
+    ></nav>
 
     <main class="w-full max-w-5xl px-4 pb-10 pt-6">
-      <div id="assignment" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+      <div
+        id="assignment"
+        class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start"
+      >
         <!-- Rectangle / preview card -->
-        <section class="flex flex-col gap-4 bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl">
+        <section
+          class="flex flex-col gap-4 bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl"
+        >
           <h2 class="text-lg font-semibold mb-1">Room preview</h2>
 
           <div
@@ -31,12 +41,19 @@
         </section>
 
         <!-- Form card -->
-        <section class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl">
+        <section
+          class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl"
+        >
           <h2 class="text-lg font-semibold mb-4">Inputs</h2>
 
           <form id="form" class="space-y-4">
             <div>
-              <label for="price" class="block text-sm font-medium text-slate-200"> Coins per m² </label>
+              <label
+                for="price"
+                class="block text-sm font-medium text-slate-200"
+              >
+                Coins per m²
+              </label>
               <input
                 type="number"
                 id="price"
@@ -50,7 +67,12 @@
 
             <div class="flex gap-4">
               <div class="flex-1">
-                <label for="length" class="block text-sm font-medium text-slate-200"> Length (m) </label>
+                <label
+                  for="length"
+                  class="block text-sm font-medium text-slate-200"
+                >
+                  Length (m)
+                </label>
                 <input
                   type="number"
                   id="length"
@@ -62,7 +84,12 @@
               </div>
 
               <div class="flex-1">
-                <label for="width" class="block text-sm font-medium text-slate-200"> Width (m) </label>
+                <label
+                  for="width"
+                  class="block text-sm font-medium text-slate-200"
+                >
+                  Width (m)
+                </label>
                 <input
                   type="number"
                   id="width"

@@ -68,16 +68,60 @@ navigationItems.forEach((item) => {
   cardContainer?.appendChild(card);
 });
 
-export function initiateMetadata() {
-  const currentPath = window.location.pathname; // e.g. /adventas/day_1/
-  const currentItem = navigationItems.find(
-    (item) => currentPath.endsWith(item.link.replace("./", "")) // 'day_1/'
-  );
+export async function initiateMetadata() {
+  const nav = document.querySelector("nav") as HTMLElement | null;
+  if (!nav) return;
+
+  const data = await fetch("../nav.html");
+  nav.innerHTML = await data.text();
+
+  const back = document.getElementById("back") as HTMLAnchorElement | null;
+  const forward = document.getElementById(
+    "forward"
+  ) as HTMLAnchorElement | null;
+  if (!back || !forward) return;
+
+  const currentPath = window.location.pathname.replace(/\/+$/, ""); // strip trailing slash
+  const segments = currentPath.split("/").filter(Boolean); // ["adventas", "day_1"]
+  const currentFolder = segments[segments.length - 1]; // "day_1"
+  const basePath = "/" + segments.slice(0, -1).join("/"); // "/adventas"
+
+  const currentIndex = navigationItems.findIndex((item) => {
+    const linkFolder = item.link.replace("./", "").replace(/\//g, ""); // "day_1"
+    return linkFolder === currentFolder;
+  });
+
+  const currentItem = navigationItems[currentIndex];
 
   if (currentItem) {
     document.title = currentItem.title;
-
     const h1 = document.getElementById("page-title");
     if (h1) h1.textContent = currentItem.title;
+  }
+
+  // BACK
+  if (currentIndex > 0) {
+    const targetFolder = navigationItems[currentIndex - 1].link
+      .replace("./", "")
+      .replace(/\/+$/, ""); // "day_0" style
+    back.href = `${basePath}${targetFolder}/`; // "/adventas/day_0/"
+  } else {
+    back.addEventListener("click", (e) => e.preventDefault());
+    back.classList.add("opacity-40", "pointer-events-none", "cursor-default");
+  }
+
+  // FORWARD
+  if (currentIndex > -1 && currentIndex < navigationItems.length - 1) {
+    const targetFolder = navigationItems[currentIndex + 1].link
+      .replace("./", "")
+      .replace(/\/+$/, "");
+    forward.href = `${basePath}${targetFolder}/`; // "/adventas/day_2/"
+  } else {
+    forward.addEventListener("click", (e) => e.preventDefault());
+    forward.classList.add(
+      "opacity-40",
+      "pointer-events-none",
+      "cursor-default"
+    );
   }
 }
