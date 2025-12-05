@@ -42,7 +42,7 @@ window.onload = () => {
         .split("")
         .map((digit) => drawDigit(Number(digit)))
         .join("");
-      await new Promise((resolve) => setTimeout(resolve, 100000));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
       if (i === 0) {
         // at the end reset
         button.disabled = false;
