@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kalėdinis TECHIN programavimo iššūkis 2025</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css"
+    />
+    <link rel="stylesheet" href="./day.css" />
+  </head>
+
+  <body
+    class="min-h-screen bg-slate-950 text-slate-50 flex flex-col items-center"
+  >
+    <nav></nav>
+
+    <main class="w-full max-w-5xl px-4 pb-10 pt-6">
+      <div
+        id="assignment"
+        class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start"
+      >
+        <!-- clock preview -->
+        <section
+          class="flex flex-col gap-4 bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl"
+        >
+          <h2 class="text-lg font-semibold mb-1">Clock preview</h2>
+
+          <div id="calculation-clock" class="clock">
+            <div class="wrap">
+              <span class="hour"></span>
+              <span class="minute resizing"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+
+          <div id="results" class="mt-4 text-sm text-slate-200 space-y-1"></div>
+        </section>
+
+        <!-- Form card -->
+        <section
+          class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl"
+        >
+          <h2 class="text-lg font-semibold mb-4">Inputs</h2>
+
+          <form id="form" class="space-y-4">
+            <div class="flex gap-4">
+              <div class="flex-1">
+                <label
+                  for="hours"
+                  class="block text-sm font-medium text-slate-200"
+                >
+                  Hours
+                </label>
+                <input
+                  type="number"
+                  id="hours"
+                  name="hours"
+                  class="mt-1 p-2 rounded bg-gray-800 text-white w-full border border-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  min="0"
+                  max="23"
+                  value="0"
+                  data-dimensions
+                />
+              </div>
+
+              <div class="flex-1">
+                <label
+                  for="minutes"
+                  class="block text-sm font-medium text-slate-200"
+                >
+                  Minutes
+                </label>
+                <input
+                  type="number"
+                  id="minutes"
+                  name="minutes"
+                  class="mt-1 p-2 rounded bg-gray-800 text-white w-full border border-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  min="0"
+                  max="59"
+                  value="0"
+                  data-dimensions
+                />
+              </div>
+
+              <div class="flex-1">
+                <label
+                  for="airtime"
+                  class="block text-sm font-medium text-slate-200"
+                >
+                  Airtime
+                </label>
+                <input
+                  type="number"
+                  id="airtime"
+                  name="airtime"
+                  class="mt-1 p-2 rounded bg-gray-800 text-white w-full border border-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  min="0"
+                  value="0"
+                  data-dimensions
+                />
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              class="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-emerald-600 rounded-lg hover:bg-emerald-500 text-sm font-medium transition shadow-md hover:shadow-lg"
+            >
+              <span>Calculate</span>
+            </button>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

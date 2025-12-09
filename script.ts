@@ -10,7 +10,7 @@ const titleArray = [
   "Santa’s Number-Trimming Magic",
   "Gift Bag",
   "Santa’s Magical ASCII Countdown",
-  "TBA",
+  "Santa’s Sleigh Flight Schedule",
   "TBA",
   "TBA",
   "TBA",
@@ -117,7 +117,7 @@ export async function initiateMetadata() {
     const targetFolder = navigationItems[currentIndex - 1].link
       .replace("./", "")
       .replace(/\/+$/, ""); // "day_0" style
-    back.href = `${basePath}${targetFolder}/`; // "/adventas/day_0/"
+    back.href = `${basePath}/${targetFolder}/`.replace("//", "/"); // "/adventas/day_0/"
   } else {
     back.addEventListener("click", (e) => e.preventDefault());
     back.classList.add("opacity-40", "pointer-events-none", "cursor-default");

@@ -1,0 +1,80 @@
+.clock {
+  margin: auto;
+  border-radius: 100%;
+  background: #ffffff;
+  font-family: "Montserrat";
+  box-shadow: inset 2px 3px 8px 0 rgba(0, 0, 0, 0.1);
+  width: 350px;
+}
+
+.wrap {
+  overflow: hidden;
+  position: relative;
+  height: 350px;
+  border-radius: 100%;
+}
+
+.minute,
+.hour {
+  position: absolute;
+  height: 100px;
+  width: 6px;
+  margin: auto;
+  top: -27%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: black;
+  transform-origin: bottom center;
+  transform: rotate(0deg);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  transition: transform 1s ease-out;
+}
+
+.minute {
+  position: absolute;
+  height: 130px;
+  width: 4px;
+  top: -38%;
+  left: 0;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  transform: rotate(0deg);
+}
+
+.dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 100px;
+  background: white;
+  border: 2px solid #1b1b1b;
+  border-radius: 100px;
+  margin: auto;
+  z-index: 1;
+}
+
+.wrap.resizing {
+  box-shadow: 0 0 20px 20px rgba(16, 185, 129, 0.5);
+}
+
+@media (max-width: 1023px) {
+  .clock {
+    max-width: 250px;
+    max-height: 250px;
+  }
+  .wrap {
+    max-height: 250px;
+  }
+  .minute {
+    height: 94px;
+  }
+
+  .hour {
+    height: 68px;
+  }
+}
