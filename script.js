@@ -8,7 +8,7 @@ const titleArray = [
     "Santa’s Christmas Concert Seating Plan",
     "Christmas Lights Pattern Generator",
     "Santa’s Perfect Christmas Melon",
-    "TBA",
+    "Santa’s Spinning Clock Mystery",
     "TBA",
     "TBA",
     "TBA",
@@ -41,7 +41,8 @@ navigationItems.forEach((item) => {
     link.href = item.link;
     link.className = "relative z-10 flex h-full w-full";
     const content = document.createElement("div");
-    content.className = "flex flex-col h-full w-full justify-center items-center text-white";
+    content.className =
+        "flex flex-col h-full w-full justify-center items-center text-white";
     const titleHeading = document.createElement("h4");
     titleHeading.className =
         "block w-full font-bold text-center bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-md md:text-3xl sm:text-6xl lg:text-sm";
@@ -80,7 +81,9 @@ export async function initiateMetadata() {
     }
     // BACK
     if (currentIndex > 0) {
-        const targetFolder = navigationItems[currentIndex - 1].link.replace("./", "").replace(/\/+$/, ""); // "day_0" style
+        const targetFolder = navigationItems[currentIndex - 1].link
+            .replace("./", "")
+            .replace(/\/+$/, ""); // "day_0" style
         back.href = `${basePath}/${targetFolder}/`.replace("//", "/"); // "/adventas/day_0/"
     }
     else {
@@ -89,7 +92,9 @@ export async function initiateMetadata() {
     }
     // FORWARD
     if (currentIndex > -1 && currentIndex < navigationItems.length - 1) {
-        const targetFolder = navigationItems[currentIndex + 1].link.replace("./", "").replace(/\/+$/, "");
+        const targetFolder = navigationItems[currentIndex + 1].link
+            .replace("./", "")
+            .replace(/\/+$/, "");
         forward.href = `${basePath}${targetFolder}/`; // "/adventas/day_2/"
     }
     else {

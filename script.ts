@@ -14,7 +14,7 @@ const titleArray = [
   "Santa’s Christmas Concert Seating Plan",
   "Christmas Lights Pattern Generator",
   "Santa’s Perfect Christmas Melon",
-  "TBA",
+  "Santa’s Spinning Clock Mystery",
   "TBA",
   "TBA",
   "TBA",
@@ -53,7 +53,8 @@ navigationItems.forEach((item) => {
   link.className = "relative z-10 flex h-full w-full";
 
   const content = document.createElement("div");
-  content.className = "flex flex-col h-full w-full justify-center items-center text-white";
+  content.className =
+    "flex flex-col h-full w-full justify-center items-center text-white";
 
   const titleHeading = document.createElement("h4");
   titleHeading.className =
@@ -86,7 +87,9 @@ export async function initiateMetadata() {
   nav.innerHTML = await data.text();
 
   const back = document.getElementById("back") as HTMLAnchorElement | null;
-  const forward = document.getElementById("forward") as HTMLAnchorElement | null;
+  const forward = document.getElementById(
+    "forward"
+  ) as HTMLAnchorElement | null;
   if (!back || !forward) return;
 
   const currentPath = window.location.pathname.replace(/\/+$/, ""); // strip trailing slash
@@ -109,7 +112,9 @@ export async function initiateMetadata() {
 
   // BACK
   if (currentIndex > 0) {
-    const targetFolder = navigationItems[currentIndex - 1].link.replace("./", "").replace(/\/+$/, ""); // "day_0" style
+    const targetFolder = navigationItems[currentIndex - 1].link
+      .replace("./", "")
+      .replace(/\/+$/, ""); // "day_0" style
     back.href = `${basePath}/${targetFolder}/`.replace("//", "/"); // "/adventas/day_0/"
   } else {
     back.addEventListener("click", (e) => e.preventDefault());
@@ -118,10 +123,16 @@ export async function initiateMetadata() {
 
   // FORWARD
   if (currentIndex > -1 && currentIndex < navigationItems.length - 1) {
-    const targetFolder = navigationItems[currentIndex + 1].link.replace("./", "").replace(/\/+$/, "");
+    const targetFolder = navigationItems[currentIndex + 1].link
+      .replace("./", "")
+      .replace(/\/+$/, "");
     forward.href = `${basePath}${targetFolder}/`; // "/adventas/day_2/"
   } else {
     forward.addEventListener("click", (e) => e.preventDefault());
-    forward.classList.add("opacity-40", "pointer-events-none", "cursor-default");
+    forward.classList.add(
+      "opacity-40",
+      "pointer-events-none",
+      "cursor-default"
+    );
   }
 }
