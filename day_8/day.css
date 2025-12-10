@@ -1,0 +1,28 @@
+.grid-cell {
+  border-radius: 0.375rem; /* rounded-md-ish */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #0f172a; /* slate-900 */
+}
+
+/* animation utility */
+.animate-pop {
+  animation: pop-in 0.4s ease-out forwards;
+}
+
+@keyframes pop-in {
+  0% {
+    transform: scale(0.3) rotate(3deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
