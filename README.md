@@ -10,7 +10,7 @@ Small coding challenge project.
 
 ### 🔗 Live Preview
 
-https://pupkus.github.io/adventas
+https://pupkus.github.io/techin-scriptmas-2025
 
 ---
 
