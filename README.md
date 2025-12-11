@@ -1,13 +1,12 @@
 # 🎄🎄 Kalėdinis TECHIN programavimo iššūkis 2025 🎄🎄
 
-## my way
-
 Small coding challenge project.
 
 - Written in **TypeScript**
 - Compiled to **JavaScript** using `tsc`
 - Tailwind CSS included via CDN
 - Fully static — no backend
+- Too much free time - yes
 
 ### 🔗 Live Preview
 
