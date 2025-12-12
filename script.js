@@ -10,7 +10,7 @@ const titleArray = [
     "Santa’s Perfect Christmas Melon",
     "Santa’s Spinning Clock Mystery",
     "Santa’s Magical Archery Challenge",
-    "TBA",
+    "Santa’s Magic Word Workshop — Anagram Groups",
     "TBA",
     "TBA",
     "TBA",
