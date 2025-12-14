@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kalėdinis TECHIN programavimo iššūkis 2025</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" />
+    <link rel="stylesheet" href="./day.css" />
+  </head>
+
+  <body class="min-h-screen bg-slate-950 text-slate-50 flex flex-col items-center">
+    <nav></nav>
+
+    <main class="w-full max-w-5xl px-4 pb-10 pt-6">
+      <div id="assignment" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <!-- Input card: first on mobile, second on desktop -->
+        <section class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl order-1 md:order-2">
+          <h2 class="text-lg font-semibold mb-4">Inputs</h2>
+          <p class="text-xs text-slate-400 mb-4 break-words">
+            Petraitis Rokas, Augė Artūras, Mikalauskaitė Aušra, Šlivka Donatas, Stakėnaitė Ieva, Skrėbė Domas, Bruzgaitė
+            Akvilė
+          </p>
+
+          <form>
+            <div class="flex gap-4 flex-col sm:flex-row">
+              <div id="count-input" class="flex-1">
+                <label for="student-input" class="block text-sm font-medium text-slate-200"> Word input </label>
+                <input
+                  type="text"
+                  id="student-input"
+                  name="student-input"
+                  class="mt-1 p-2 rounded bg-gray-800 text-white w-full border border-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                />
+              </div>
+            </div>
+
+            <div class="mt-4 flex flex-wrap gap-3">
+              <button
+                type="submit"
+                id="submit"
+                class="inline-flex items-center gap-2 px-4 py-2 bg-emerald-600 rounded-lg hover:bg-emerald-500 text-sm font-medium transition shadow-md hover:shadow-lg"
+              >
+                <span>Next</span>
+              </button>
+              <button
+                type="button"
+                id="filter-button"
+                class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 rounded-lg hover:bg-indigo-500 text-sm font-medium transition shadow-md hover:shadow-lg"
+              >
+                <span>Filter Students</span>
+              </button>
+              <button
+                type="reset"
+                id="reset-button"
+                class="inline-flex items-center gap-2 px-4 py-2 bg-red-600 rounded-lg hover:bg-red-500 text-sm font-medium transition shadow-md hover:shadow-lg"
+              >
+                <span>Reset</span>
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Student preview: second on mobile, first on desktop -->
+        <section
+          class="flex flex-col gap-4 bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl pb-10 order-2 md:order-1"
+        >
+          <div class="flex items-center justify-between gap-2">
+            <h2 class="text-lg font-semibold mb-1">Student preview</h2>
+            <span
+              id="student-count-badge"
+              class="hidden px-3 py-1 rounded-full text-xs font-medium bg-emerald-900/70 text-emerald-100 border border-emerald-600"
+            ></span>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-semibold text-slate-300 mb-1">Current students</h3>
+            <div
+              id="input-container"
+              class="flex flex-row w-full flex-wrap gap-1 bg-slate-950/40 border border-slate-800 rounded-lg p-3 min-h-[3rem]"
+            ></div>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-semibold text-slate-300 mb-1 mt-2">Student filter</h3>
+            <div id="results" class="mt-2 text-sm text-slate-200" aria-live="polite"></div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
